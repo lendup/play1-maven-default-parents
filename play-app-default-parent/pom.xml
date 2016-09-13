@@ -37,7 +37,15 @@ limitations under the License.
     <scm>
         <url>fill_in_your_project</url>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>aws-release</id>
+            <name>AWS Release Repository</name>
+            <url>s3://lendup.repos/maven/releases</url>
+        </repository>
+    </distributionManagement>
 
     <developers>
         <developer>
@@ -277,6 +285,14 @@ limitations under the License.
                 </executions>
             </plugin>
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
     </build>
 
     <profiles>
